@@ -1,0 +1,9 @@
+node_modules
+.next
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+# PINs en clair : jamais versionnés
+supabase/pins.local.sql
+PINS.local.txt
