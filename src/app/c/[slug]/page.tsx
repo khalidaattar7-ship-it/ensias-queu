@@ -2,6 +2,7 @@
 
 import { notFound, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { CellSwitcher } from "@/components/CellSwitcher";
 import { cellName } from "@/lib/cells";
 import { storage, supabase, useQueue } from "@/lib/queue";
 
@@ -61,6 +62,7 @@ export default function StudentPage() {
 
   return (
     <>
+      <CellSwitcher current={slug} />
       <p className="eyebrow">Stand · File d&apos;attente</p>
       <h1>{name}</h1>
 
