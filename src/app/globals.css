@@ -76,3 +76,35 @@ main:has(.qr-sheet) { max-width: none; padding: 0; }
 .qr-cta { font-size: 24px; font-weight: 700; margin: 24px 0 4px; }
 .qr-url { font-size: 14px; color: #555; margin: 0; word-break: break-all; }
 @media print { .qr-page { min-height: auto; height: 100vh; } }
+
+/* Bandeau des stands (page d'une cellule) */
+.switcher { display: flex; gap: 8px; overflow-x: auto; margin: 0 -16px 20px; padding: 0 16px 4px; scrollbar-width: none; }
+.switcher::-webkit-scrollbar { display: none; }
+.chip { flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--cream); text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap; }
+.chip-all { color: var(--gold); }
+.chip-current { border-color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold); }
+.chip-badge { font-size: 12px; font-weight: 700; padding: 2px 7px; border-radius: 999px; background: var(--border); color: var(--cream); }
+.chip-turn .chip-badge { background: var(--success); color: var(--ink); }
+.chip-next .chip-badge { background: var(--gold); color: var(--ink); }
+.chip-passed .chip-badge { color: var(--danger); }
+
+/* Vue multi-files (accueil) */
+main:has(.overview) { max-width: 960px; }
+.section { font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin: 24px 0 10px; }
+.grid { display: grid; gap: 10px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+.tile { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--border); background: var(--surface); color: var(--cream); text-decoration: none; }
+.tile-name { font-weight: 700; font-size: 17px; }
+.tile-stats { display: flex; gap: 24px; }
+.tile-stats > span { display: flex; flex-direction: column; }
+.tile-stats .label { font-size: 12px; }
+.tile-stats strong { font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile-cta { color: var(--gold); font-size: 14px; font-weight: 600; }
+.tile-status { font-weight: 700; font-size: 15px; }
+.tile-turn { border-color: var(--success); box-shadow: inset 0 0 0 1px var(--success); }
+.tile-turn .tile-status { color: var(--success); }
+.tile-next { border-color: var(--gold); }
+.tile-next .tile-status { color: var(--gold); }
+.tile-passed { opacity: .7; }
+.tile-passed .tile-status { color: var(--danger); }
